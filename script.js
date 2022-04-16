@@ -121,6 +121,8 @@ fullScreenBtn.addEventListener('click', () => {
   document.documentElement.requestFullscreen();
 });
 
-window.addEventListener('mousemove', () => {
-  document.documentElement.exitFullscreen();
-});
+['mousemove', 'keydown'].forEach(e =>
+  window.addEventListener(e => {
+    document.documentElement.exitFullscreen();
+  })
+);
